@@ -8,12 +8,12 @@
     "react-dom": "^16.6.0",
     "react-scripts": "2.0.5"
   },
-  "homepage": "https://pcfilicetti.github.io/v-basic-react-click-game",
+  "homepage": "https://pcfilicetti.github.io/v-basic-react-click-game/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -178,13 +178,17 @@ class PhotoContainer extends React.Component {
 
     clickEvent = (event) => {
         event.preventDefault();
+        if (this.state.score > this.state.topScore) {
+            this.setState({
+                topScore: this.state.score
+            });
+        }
         const target = event.target.alt;
         const result = this.state.photoURLs[target - 1].clicked;
         if (result) {
             this.setState({
                 score: 0,
-                photoURLs: this.state.defaultURLs,
-                topScore: this.state.topScore - 1
+                photoURLs: this.state.defaultURLs
             });
         } else {
             let sub = this.state.photoURLs;
@@ -210,7 +214,7 @@ class PhotoContainer extends React.Component {
             <div className="row">
                 <h1 className="col-sm-12">Score: {this.state.score}</h1>
                 <br />
-                <h1 className="col-sm-12">Top Score: {this.state.topScore + 1}</h1>
+                <h1 className="col-sm-12">Top Score: {this.state.topScore}</h1>
                 <Photo onClick={this.clickEvent} src={this.state.photoURLs[0].url} alt={this.state.photoURLs[0].id} />
                 <Photo onClick={this.clickEvent} src={this.state.photoURLs[1].url} alt={this.state.photoURLs[1].id} />
                 <Photo onClick={this.clickEvent} src={this.state.photoURLs[2].url} alt={this.state.photoURLs[2].id} />
