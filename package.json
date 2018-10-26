@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-scripts": "2.0.5"
   },
+  "homepage": "https://pcfilicetti.github.io/v-basic-react-click-game",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
